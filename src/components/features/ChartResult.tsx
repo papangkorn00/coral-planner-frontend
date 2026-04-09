@@ -67,7 +67,7 @@ const ChartResult = ({chartData}: ChartResultProps) => {
               }}
             />
 
-            <ChartTooltip content={<CustomTooltip />} cursor={{ fill: 'transparent' }} />
+            <ChartTooltip content={<CustomTooltip />} cursor={false} />
             <ReferenceLine y={0} stroke="#000" />
 
             <Bar dataKey="netProfit" radius={4}>
