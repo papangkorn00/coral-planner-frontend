@@ -115,7 +115,7 @@ const InputCrop = ({onClearInputFields ,inputData, onUpdateInput}: InputCropProp
           ></Input>
         </Field>
         
-        <Button className="cursor-pointer" size="icon" variant="destructive" onClick={onClearInputFields}>
+        <Button className="cursor-pointer" size="icon-lg" variant="destructive" onClick={onClearInputFields}>
           <RotateCcw />
         </Button>
       </div>
