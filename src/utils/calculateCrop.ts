@@ -1,8 +1,7 @@
 import { type CalculatorInput, type CalculatorOutput, type Crop, type CropQuality } from "@/types/crop";
 
-// Remaining Days = 28 - currentDay + 1 รวมวันปัจจุบัน
 export const getRemainingDays = (currentDay: number, seasonLength: number = 28) => {
-    return seasonLength - currentDay + 1
+    return seasonLength - currentDay
 }
 
 export const calculateHarvestCount = (growthTime: number, regrowthTime: number, remainingDays: number) => {

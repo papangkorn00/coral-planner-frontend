@@ -9,7 +9,7 @@ import {calculateCrop} from "@/utils/calculateCrop"
 const CalculatorCropPage = () => {
   const [crops, setCrops] = useState<Crop[]>([])
   const [inputs, setInputs] = useState<CalculatorInput>({
-    townRank: "F",
+    townRank: "S",
     season: "Spring",
     currentDay: 1,
     farmSize: 5,
@@ -40,6 +40,7 @@ const CalculatorCropPage = () => {
       .map((crop) => calculateCrop(crop, inputs))
       .filter((count) => count.harvestCount > 0)
       .sort((a, b) => b.netProfit - a.netProfit)
+      .slice(0, 10)
   }, [crops, inputs])
 
   const handleInputs = (

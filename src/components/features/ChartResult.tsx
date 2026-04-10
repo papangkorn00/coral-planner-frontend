@@ -1,11 +1,12 @@
 import {
   ChartContainer,
   type ChartConfig,
-  // ChartTooltip,
-  // ChartTooltipContent,
+  ChartTooltip,
+  ChartTooltipContent,
 } from "@/components/ui/chart"
 import {Bar, BarChart, XAxis, YAxis, Cell, ReferenceLine} from "recharts"
-import {CustomXAxisTick} from "./CustomXAxisTick"
+import {CustomXAxisTick} from "../layouts/CustomXAxisTick"
+import { CustomTooltip } from "../layouts/CustomTooltip"
 import type { CalculatorOutput } from "@/types/crop"
 
 interface ChartResultProps {
@@ -32,7 +33,7 @@ const ChartResult = ({chartData}: ChartResultProps) => {
   
 
   return (
-    <div className="col-span-10 md:col-span-6 col-start-2 md:col-start-4 z-10">
+    <div className="col-span-10 md:col-span-6 col-start-2 md:col-start-4 z-10 font-coral-reef">
       <div className="bg-(--bg-section) rounded-4xl h-auto p-14">
         <ChartContainer
           config={chartConfig}
@@ -48,14 +49,14 @@ const ChartResult = ({chartData}: ChartResultProps) => {
             <XAxis
               dataKey="crop.name"
               tickMargin={5}
-              // tickFormatter={(value) => value.slice(0, 3)}
+              tickFormatter={(value) => value.slice(0, 3)}
               tickLine={false}
               axisLine={false}
               tick={CustomXAxisTick}
             />
             <YAxis
-              dataKey="netProfit"
-              domain={["dataMin", "auto"]}
+              // dataKey="netProfit"
+              domain={[0, "auto"]}
               ticks={customTicks}
               label={{
                 value: "Net Profits",
@@ -66,7 +67,7 @@ const ChartResult = ({chartData}: ChartResultProps) => {
               }}
             />
 
-            {/* <ChartTooltip content={<ChartTooltipContent />} /> */}
+            <ChartTooltip content={<CustomTooltip />} cursor={false} />
             <ReferenceLine y={0} stroke="#000" />
 
             <Bar dataKey="netProfit" radius={4}>
