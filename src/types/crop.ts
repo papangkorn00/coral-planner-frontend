@@ -56,7 +56,6 @@ export interface CropQualityValues {
 
 export interface CalculatorOutput {
     crop: Crop
-    plantCount?: number;
     seedCostTotal: number;
     growthTime: number;
     possibleHarvestCount: number;

@@ -82,12 +82,10 @@ export const calculateCrop = (crop: Crop, input: CalculatorInput): CalculatorOut
 
     return {
         crop,
-        // plantCount: farmSize,
         seedCostTotal,
         growthTime: crop.growthTimeDay,
         possibleHarvestCount,
         remainingDays,
-        // revenuePerHarvest: sellPricePerItem * farmSize, // รายได้ต่อการเก็บ 1 รอบ
         // totalRevenue,
         priceBase: sellPrices.base * farmSize,
         priceBronze: sellPrices.bronze * farmSize,

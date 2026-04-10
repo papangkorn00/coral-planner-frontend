@@ -53,11 +53,11 @@ const CalculatorCropPage = () => {
     }))
   }
 
-  console.log(inputs)
+  // console.log(inputs)
 
   const clearInputFields = () =>{
     setInputs(() => ({
-      townRank: "F",
+      townRank: "S",
       season: "Spring",
       currentDay: 1,
       farmSize: 1,
