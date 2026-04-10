@@ -5,14 +5,6 @@ export const CustomTooltip = ({active, payload, label}: any) => {
 
     return (
       <div className="bg-white p-4 border rounded-lg shadow-lg font-coral-reef">
-        {/* <div className="flex items-center gap-2 mb-2">
-          <img
-            src="/images/crops/in-game-coin.png"
-            alt="in-game-coin"
-            className="h-6 w-6"
-          />
-          <p className="font-bold text-lg">{label}</p>
-        </div> */}
         <p className="font-bold text-lg">{label}</p>
 
         {/* Net Profit */}
@@ -36,13 +28,14 @@ export const CustomTooltip = ({active, payload, label}: any) => {
             {/* Growth Time */}
             <p className="text-gray-600">Growth Time: {data.growthTime} days</p>
 
+            {/* Max Harvest */}
+            <p className="text-gray-600">
+              Max Harvests: {data.possibleHarvestCount} times
+            </p>
+
             {/* Regrowth Time */}
             <p className="text-gray-600">
               Regrowth Time: {data.crop.regrowthTimeDay} days
-            </p>
-
-            <p className="text-gray-600">
-              Max Harvests: {data.harvestCount} times
             </p>
           </div>
 
@@ -50,7 +43,7 @@ export const CustomTooltip = ({active, payload, label}: any) => {
           <div className="flex flex-col gap-1 border-t pt-2">
             <p className="text-gray-800 font-semibold mb-1">Costs</p>
             <div className="flex items-center gap-1.5">
-              <p className="text-gray-600">Seed Price: {data.crop.seedPrice}</p>
+              <p className="text-gray-600">Seed Price: {data.seedCostTotal}</p>
               <img
                 src="/images/crops/in-game-coin.png"
                 alt="in-game-coin"
@@ -63,7 +56,7 @@ export const CustomTooltip = ({active, payload, label}: any) => {
             <p className="text-gray-800 font-semibold mb-1">Sell Prices</p>
             <div className="flex items-center gap-1.5">
               <p className="text-gray-600">
-                Base Price: {data.crop.buyPriceBase}
+                Base Price: {data.priceBase}
               </p>
               <img
                 src="/images/crops/in-game-coin.png"
@@ -74,7 +67,7 @@ export const CustomTooltip = ({active, payload, label}: any) => {
 
             <div className="flex items-center gap-1.5">
               <p className="text-amber-700">
-                Bronze: {data.crop.buyPriceBronze}
+                Bronze: {data.priceBronze}
               </p>
               <img
                 src="/images/crops/in-game-coin.png"
@@ -84,7 +77,7 @@ export const CustomTooltip = ({active, payload, label}: any) => {
             </div>
             <div className="flex items-center gap-1.5">
               <p className="text-slate-400">
-                Silver: {data.crop.buyPriceSilver}
+                Silver: {data.priceSilver}
               </p>
               <img
                 src="/images/crops/in-game-coin.png"
@@ -93,7 +86,7 @@ export const CustomTooltip = ({active, payload, label}: any) => {
               />
             </div>
             <div className="flex items-center gap-1.5">
-              <p className="text-yellow-500">Gold: {data.crop.buyPriceGold}</p>
+              <p className="text-yellow-500">Gold: {data.priceGold}</p>
               <img
                 src="/images/crops/in-game-coin.png"
                 alt="in-game-coin"
@@ -102,7 +95,7 @@ export const CustomTooltip = ({active, payload, label}: any) => {
             </div>
             <div className="flex items-center gap-1.5">
               <p className="text-purple-500 font-medium">
-                Osmium: {data.crop.buyPriceOsmium}
+                Osmium: {data.priceOsmium}
               </p>
               <img
                 src="/images/crops/in-game-coin.png"

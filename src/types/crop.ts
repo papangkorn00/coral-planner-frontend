@@ -30,11 +30,11 @@ export interface Crop {
     regrowthTimeDay: number;
     possibleMaxHarvestDay: number;
     imageURL: string;
-    buyPriceBase: number;
-    buyPriceBronze: number;
-    buyPriceSilver: number;
-    buyPriceGold: number;
-    buyPriceOsmium: number;
+    sellPriceBase: number;
+    sellPriceBronze: number;
+    sellPriceSilver: number;
+    sellPriceGold: number;
+    sellPriceOsmium: number;
     seedPrice: number;
 }
 
@@ -43,26 +43,35 @@ export interface CalculatorInput {
     season: SeasonValue;
     currentDay: number;
     farmSize: number;
-    // targetQuality?: CropQuality;
 }
 
 export type CropQuality = "Base" | "Bronze" | "Silver" | "Gold" | "Osmium";
+export interface CropQualityValues {
+    base: number;
+    bronze: number;
+    silver: number;
+    gold: number;
+    osmium: number;
+}
 
 export interface CalculatorOutput {
     crop: Crop
-
-    // Plant
-    plantCount: number;
+    plantCount?: number;
     seedCostTotal: number;
-
-    // Time
     growthTime: number;
-    harvestCount: number;
+    possibleHarvestCount: number;
     remainingDays: number;
-
-    // Financial
-    revenuePerHarvest: number;
-    totalRevenue: number;
-    netProfit: number;
+    revenuePerHarvest?: number;
+    totalRevenue?: number;
+    priceBase: number,
+    priceBronze: number,
+    priceSilver: number,
+    priceGold: number,
+    priceOsmium: number,
+    netProfit: number,
+    netProfitBronze: number,
+    netProfitSilver: number,
+    netProfitGold: number,
+    netProfitOsmium: number,
 }
 
