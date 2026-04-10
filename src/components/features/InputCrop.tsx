@@ -25,8 +25,8 @@ const InputCrop = ({onClearInputFields ,inputData, onUpdateInput}: InputCropProp
   const currentSeason = SEASON.find((season) => season.value === inputData.season,)
 
   return (
-    <div className="col-span-6 col-start-4 z-10 mt-10">
-      <div className="flex justify-center-safe items-center-safe tracking-wide gap-x-16 bg-(--bg-section) rounded-4xl p-6">
+    <main className="col-span-6 col-start-4 z-10 mt-10">
+      <section className="flex justify-center-safe items-center-safe tracking-wide gap-x-16 bg-(--bg-section) rounded-4xl p-6">
         {/* Town Ranks */}
         <Field className="gap-2">
           <FieldLabel htmlFor="input-town-rank" className="font-coral-reef">
@@ -118,8 +118,8 @@ const InputCrop = ({onClearInputFields ,inputData, onUpdateInput}: InputCropProp
         <Button className="cursor-pointer" size="icon-lg" variant="destructive" onClick={onClearInputFields}>
           <RotateCcw />
         </Button>
-      </div>
-    </div>
+      </section>
+    </main>
   )
 }
 

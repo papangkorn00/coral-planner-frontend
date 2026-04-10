@@ -32,8 +32,8 @@ const ChartResult = ({chartData}: ChartResultProps) => {
   // console.log(chartData)
 
   return (
-    <div className="col-span-10 md:col-span-6 col-start-2 md:col-start-4 z-10 font-coral-reef">
-      <div className="bg-(--bg-section) rounded-4xl h-auto p-14">
+    <main className="col-span-10 md:col-span-6 col-start-2 md:col-start-4 z-10 font-coral-reef">
+      <section className="bg-(--bg-section) rounded-4xl h-auto p-14">
         <ChartContainer
           config={chartConfig}
           className="w-full  min-h-[200px] sm:min-h-[350px] md:min-h-[500px]"
@@ -79,8 +79,8 @@ const ChartResult = ({chartData}: ChartResultProps) => {
             </Bar>
           </BarChart>
         </ChartContainer>
-      </div>
-    </div>
+      </section>
+    </main>
   )
 }
 
