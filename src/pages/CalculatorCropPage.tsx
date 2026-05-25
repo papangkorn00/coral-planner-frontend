@@ -12,7 +12,7 @@ const CalculatorCropPage = () => {
     townRank: "S",
     season: "Spring",
     currentDay: 1,
-    farmSize: 5,
+    farmSize: 1,
   })
 
   useEffect(() => {
@@ -38,9 +38,9 @@ const CalculatorCropPage = () => {
         return inputRank >= cropRank
       })
       .map((crop) => calculateCrop(crop, inputs))
-      .filter((count) => count.harvestCount > 0)
+      .filter((count) => count.possibleHarvestCount > 0)
       .sort((a, b) => b.netProfit - a.netProfit)
-      .slice(0, 10)
+      // .slice(0, 10)
   }, [crops, inputs])
 
   const handleInputs = (
@@ -53,14 +53,14 @@ const CalculatorCropPage = () => {
     }))
   }
 
-  console.log(inputs)
+  // console.log(inputs)
 
   const clearInputFields = () =>{
     setInputs(() => ({
-      townRank: "F",
+      townRank: "S",
       season: "Spring",
       currentDay: 1,
-      farmSize: 5,
+      farmSize: 1,
     }))
   }
 
