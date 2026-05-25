@@ -83,7 +83,7 @@ const InputCrop = ({ onClearInputFields, inputData, onUpdateInput }: InputCropPr
         </Field>
         {/* Current Day */}
         <Field className="gap-2">
-          <FieldLabel htmlFor="input-current-day" className="font-coral-reef bg-red-500">
+          <FieldLabel htmlFor="input-current-day" className="font-coral-reef">
             Current Day
           </FieldLabel>
           <Input
