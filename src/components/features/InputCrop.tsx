@@ -1,15 +1,15 @@
-import {Button} from "@/components/ui/button"
+import { Button } from "@/components/ui/button"
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
-import {SEASON, TOWN_RANKS, type CalculatorInput, } from "@/types/crop"
-import {ChevronDown} from "lucide-react"
-import {Input} from "@/components/ui/input"
-import {FieldLabel, Field} from "@/components/ui/field"
-import {RotateCcw } from "lucide-react";
+import { SEASON, TOWN_RANKS, type CalculatorInput, } from "@/types/crop"
+import { ChevronDown } from "lucide-react"
+import { Input } from "@/components/ui/input"
+import { FieldLabel, Field } from "@/components/ui/field"
+import { RotateCcw } from "lucide-react";
 
 type InputCropProps = {
   onClearInputFields: () => void
@@ -20,7 +20,7 @@ type InputCropProps = {
   ) => void
 }
 
-const InputCrop = ({onClearInputFields ,inputData, onUpdateInput}: InputCropProps) => {
+const InputCrop = ({ onClearInputFields, inputData, onUpdateInput }: InputCropProps) => {
   const currentRank = TOWN_RANKS.find((rank) => rank.value === inputData.townRank,)
   const currentSeason = SEASON.find((season) => season.value === inputData.season,)
 
@@ -83,7 +83,7 @@ const InputCrop = ({onClearInputFields ,inputData, onUpdateInput}: InputCropProp
         </Field>
         {/* Current Day */}
         <Field className="gap-2">
-          <FieldLabel htmlFor="input-current-day" className="font-coral-reef">
+          <FieldLabel htmlFor="input-current-day" className="font-coral-reef bg-red-500">
             Current Day
           </FieldLabel>
           <Input
@@ -114,7 +114,7 @@ const InputCrop = ({onClearInputFields ,inputData, onUpdateInput}: InputCropProp
             onChange={(e) => onUpdateInput("farmSize", parseInt(e.target.value) || 1)}
           ></Input>
         </Field>
-        
+
         <Button className="cursor-pointer" size="icon-lg" variant="destructive" onClick={onClearInputFields}>
           <RotateCcw />
         </Button>
