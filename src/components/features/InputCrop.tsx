@@ -94,9 +94,10 @@ const InputCrop = ({ onClearInputFields, inputData, onUpdateInput }: InputCropPr
             min={1}
             max={28}
             value={inputData.currentDay}
-            onChange={(e) =>
-              onUpdateInput("currentDay", parseInt(e.target.value) || 1)
-            }
+            onChange={(e) => {
+              const val = parseInt(e.target.value) || 1;
+              onUpdateInput("currentDay", Math.min(28, Math.max(1, val)));
+            }}
           ></Input>
         </Field>
         {/* Farm size */}
@@ -111,7 +112,11 @@ const InputCrop = ({ onClearInputFields, inputData, onUpdateInput }: InputCropPr
             defaultValue={1}
             min={1}
             value={inputData.farmSize}
-            onChange={(e) => onUpdateInput("farmSize", parseInt(e.target.value) || 1)}
+            onChange={(e) => {
+              const val = parseInt(e.target.value) || 1;
+              onUpdateInput("farmSize", Math.min(500, Math.max(1, val)));
+            }}
+
           ></Input>
         </Field>
 
