@@ -39,5 +39,5 @@ jobs:
 
           script: |
             cd /home/coralPlanner/coral_planner_app
-            docker compose pull coral-planner-ui
-            docker compose up -d coral-planner-ui
+            docker compose pull frontend
+            docker compose up -d frontend
