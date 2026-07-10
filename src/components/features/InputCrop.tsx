@@ -46,7 +46,7 @@ const InputCrop = ({ onClearInputFields, inputData, onUpdateInput }: InputCropPr
               {TOWN_RANKS.map((rank) => (
                 <DropdownMenuItem
                   key={rank.value}
-                  onSelect={() => onUpdateInput("townRank", rank.value)}
+                  onClick={() => onUpdateInput("townRank", rank.value)}
                 >
                   {rank.label}
                 </DropdownMenuItem>
@@ -73,7 +73,7 @@ const InputCrop = ({ onClearInputFields, inputData, onUpdateInput }: InputCropPr
               {SEASON.map((season) => (
                 <DropdownMenuItem
                   key={season.value}
-                  onSelect={() => onUpdateInput("season", season.label)}
+                  onClick={() => onUpdateInput("season", season.label)}
                 >
                   {season.label}
                 </DropdownMenuItem>
