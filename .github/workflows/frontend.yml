@@ -22,10 +22,22 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v4
 
-      - name: Build and Push Fronend
+      - name: Build and Push Frontend
         uses: docker/build-push-action@v7
         with:
           context: .
           file: ./Dockerfile
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/coral-planner-ui:latest
+
+      - name: Deploy to Azure VM
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.AZURE_HOST }}
+          username: ${{ secrets.AZURE_USERNAME }}
+          password: ${{ secrets.AZURE_PASSWORD }}
+
+          script: |
+            cd /home/coralPlanner/coral_planner_app
+            docker compose pull coral-planner-ui
+            docker compose up -d coral-planner-ui
